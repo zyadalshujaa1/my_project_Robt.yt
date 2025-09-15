@@ -1,0 +1,157 @@
+right_arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - J1
+    - J2
+    - J3
+    - J4
+    - J5
+  gains:
+    J1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J5:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+left_arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - J24
+    - J25
+    - J26
+    - J27
+    - J28
+  gains:
+    J24:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J25:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J26:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J27:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J28:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+head_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - J46
+    - J47
+  gains:
+    J46:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J47:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+right_gripper_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - J10
+    - J13
+    - J16
+    - J20
+    - J7
+  gains:
+    J10:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J13:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J16:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J20:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    J7:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+
+controller_list:
+  - name: zetaxbot/right_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - J1
+      - J2
+      - J3
+      - J4
+      - J5
+  - name: zetaxbot/left_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - J24
+      - J25
+      - J26
+      - J27
+      - J28
+  - name: zetaxbot/head_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - J46
+      - J47
+  - name: zetaxbot/right_gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - J10
+      - J13
+      - J16
+      - J20
+      - J7
