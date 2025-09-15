@@ -1,0 +1,5 @@
+# Service request
+string user_input
+
+# Service response
+string response
