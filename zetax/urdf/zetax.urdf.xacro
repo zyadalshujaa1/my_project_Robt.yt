@@ -1,0 +1,1519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+For more information, please see http://wiki.ros.org/sw_urdf_exporter
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="zetax">
+	<xacro:macro name="default_transmission" params="number">
+		<transmission name="transmission_${number}">
+			<type>
+				transmission_interface/SimpleTransmission
+			</type>
+			<joint name="J${number}">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+			</joint>
+			<actuator name="motor_${number}">
+				<hardwareInterface>
+					hardware_interface/PositionJointInterface
+				</hardwareInterface>
+				<mechanicalReduction>
+					1
+				</mechanicalReduction>
+			</actuator>
+		</transmission>
+	</xacro:macro>
+	<link name="world"/>
+	<link name="base_link">
+		<inertial>
+			<!-- xyz="8.30385774387186E-06 -0.00564900549699818 0.407657033872951" -->
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<mass value="9.78773130984725" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/base_link.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/base_link.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="virtual_joint" type="fixed">
+		<parent link="world"/>
+		<child link="base_link"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+	</joint>
+	<link name="right_shoulder_up_down_J1">
+		<inertial>
+			<origin xyz="0.0153103411855154 0.0488164370602937 0.0492738852648198" rpy="0 0 0" />
+			<mass value="0.30055137668225" />
+			<inertia ixx="0.000449736475717685" ixy="-7.75811645757491E-06" ixz="-5.07621826856943E-06" iyy="0.000192182916580971" iyz="-1.88936498599343E-05" izz="0.000306606619774997" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_shoulder_up_down_J1.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="1 1 1 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_shoulder_up_down_J1.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J1" type="revolute">
+		<origin xyz="-0.14354 -0.0547 0.90833" rpy="-1.5708 0 0" />
+		<parent link="base_link" />
+		<child link="right_shoulder_up_down_J1" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="1" effort="-10" velocity="10" />
+	</joint>
+	<link name="right_shoulder_forw_backw_J2">
+		<inertial>
+			<origin xyz="0.0446469801637055 0.0228744232692757 -0.00275740740024161" rpy="0 0 0" />
+			<mass value="0.403176904286232" />
+			<inertia ixx="0.000343284355940545" ixy="-1.15995503921432E-06" ixz="-1.22811066459E-05" iyy="0.000457510691442232" iyz="-6.93541963407655E-06" izz="0.000360012473378437" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_shoulder_forw_backw_J2.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="1 1 1 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_shoulder_forw_backw_J2.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J2" type="revolute">
+		<origin xyz="-0.011824 0.03981 0.045862" rpy="-3.1416 0 3.1416" />
+		<parent link="right_shoulder_up_down_J1" />
+		<child link="right_shoulder_forw_backw_J2" />
+		<axis xyz="1 0 0" />
+		<limit lower="0" upper="1.57" effort="-10" velocity="10" />
+	</joint>
+	<link name="right_bicep_J3">
+		<inertial>
+			<origin xyz="-0.00664408741859399 -5.97015817801298E-05 -0.0827827026602137" rpy="0 0 0" />
+			<mass value="0.500684348318071" />
+			<inertia ixx="0.000405508349808579" ixy="-4.43264630740647E-07" ixz="-8.59139485963849E-05" iyy="0.000666172399407517" iyz="-2.28923617458674E-07" izz="0.000403330494710682" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_bicep_J3.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="1 1 1 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_bicep_J3.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J3" type="revolute">
+		<origin xyz="0.066391 0.062911 -2.2895E-05" rpy="-1.5708 -1.57 -3.1416" />
+		<parent link="right_shoulder_forw_backw_J2" />
+		<child link="right_bicep_J3" />
+		<axis xyz="0 0 1" />
+		<limit lower="-0.6" upper="0.6" effort="10" velocity="10" />
+	</joint>
+	<link name="right_hand_J4">
+		<inertial>
+			<origin xyz="-0.00051849594887482 -0.0896886610886017 -0.0236602080704487" rpy="0 0 0" />
+			<mass value="0.305840674504553" />
+			<inertia ixx="0.000493914524722846" ixy="-2.18663073380393E-07" ixz="2.39632973455391E-06" iyy="0.000506123179189836" iyz="2.37152311419707E-06" izz="0.000341594678834825" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_hand_J4.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_hand_J4.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J4" type="revolute">
+		<origin xyz="-0.031081 -0.026418 -0.22476" rpy="1.5707 0 0.001174" />
+		<parent link="right_bicep_J3" />
+		<child link="right_hand_J4" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="1.57" effort="20" velocity="10" />
+	</joint>
+	<link name="right_wrist_J5">
+		<inertial>
+			<origin xyz="-0.000114101901909747 0.00644608275733352 0.0569793460274128" rpy="0 0 0" />
+			<mass value="0.0836281309746193" />
+			<inertia ixx="8.68948537796338E-05" ixy="7.39495664486675E-08" ixz="2.94773115317809E-07" iyy="6.09815762715336E-05" iyz="-1.95191463960257E-05" izz="3.11880385129723E-05" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_wrist_J5.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_wrist_J5.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J5" type="revolute">
+		<origin xyz="-0.00026291 -0.28325 -0.016282" rpy="1.5658 -0.001174 0" />
+		<parent link="right_hand_J4" />
+		<child link="right_wrist_J5" />
+		<axis xyz="0 0 1" />
+		<limit lower="-1.57" upper="1.57" effort="10" velocity="10" />
+	</joint>
+	<link name="right_thump_J7">
+		<inertial>
+			<origin xyz="-0.000312541279265832 -0.0159735942310025 -0.00229614451493243" rpy="0 0 0" />
+			<mass value="0.0103243031875615" />
+			<inertia ixx="1.09991220710435E-06" ixy="-5.0205219342428E-09" ixz="-6.31358336053234E-09" iyy="9.4554149761043E-07" iyz="7.36808844017295E-08" izz="7.48337316330889E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_thump_J7.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_thump_J7.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J7" type="revolute">
+		<origin xyz="0 0.030154 0.05991" rpy="3.0585 0 0" />
+		<parent link="right_wrist_J5" />
+		<child link="right_thump_J7" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="1.57" effort="-20" velocity="10" />
+	</joint>
+	<link name="right_thump_J8">
+		<inertial>
+			<origin xyz="0.00263831372173146 -0.0173217879633072 -0.00325000625952035" rpy="0 0 0" />
+			<mass value="0.00578743353711955" />
+			<inertia ixx="3.72666607894796E-07" ixy="5.56843823703261E-09" ixz="-7.69389962117362E-13" iyy="3.35633840073675E-07" iyz="2.00234946621592E-13" izz="2.90221053702595E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_thump_J8.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_thump_J8.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J8" type="revolute">
+		<origin xyz="-0.0022994 -0.034211 -0.0096226" rpy="0.76984 0.32309 0.29857" />
+		<parent link="right_thump_J7" />
+		<child link="right_thump_J8" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J7" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="right_thump_J9">
+		<inertial>
+			<origin xyz="-0.000487645597847364 -0.0133117732514413 -0.00324058247978604" rpy="0 0 0" />
+			<mass value="0.004086100810224" />
+			<inertia ixx="1.8045778456823E-07" ixy="1.31774837356245E-08" ixz="1.41067502616413E-10" iyy="1.6693109886181E-07" iyz="-2.07089987511365E-11" izz="1.95952066397287E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_thump_J9.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_thump_J9.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J9" type="revolute">
+		<origin xyz="0.0018602 -0.028082 0" rpy="0 0 0" />
+		<parent link="right_thump_J8" />
+		<child link="right_thump_J9" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J8" multiplier="0.3" offset="0" />
+	</joint>
+	<link name="right_index_J10">
+		<inertial>
+			<origin xyz="0.000885768796903552 0.0181923331643391 0.00325002739626079" rpy="0 0 0" />
+			<mass value="0.00464663258164643" />
+			<inertia ixx="3.43446856353789E-07" ixy="-3.61141088926714E-09" ixz="1.46546023221946E-10" iyy="2.19871475309783E-07" iyz="1.20170564999191E-12" izz="2.98903706139635E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_index_J10.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_index_J10.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J10" type="revolute">
+		<origin xyz="0.0005 0.038503 0.121" rpy="1.4739 0 0" />
+		<parent link="right_wrist_J5" />
+		<child link="right_index_J10" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="1.57" effort="-10" velocity="10" />
+	</joint>
+	<link name="right_index_J11">
+		<inertial>
+			<origin xyz="-0.00112479025271311 0.0108503126007952 0.00325028734460535" rpy="0 0 0" />
+			<mass value="0.0029694189425259" />
+			<inertia ixx="1.11378032864788E-07" ixy="-6.59585267819045E-09" ixz="4.07927660175476E-12" iyy="9.24092224681025E-08" iyz="6.36819227427545E-12" izz="1.09028843349904E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_index_J11.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_index_J11.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J11" type="revolute">
+		<origin xyz="0.0014005 0.0358 0" rpy="0 0 0" />
+		<parent link="right_index_J10" />
+		<child link="right_index_J11" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J10" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="right_index_J12">
+		<inertial>
+			<origin xyz="0.000415442786964482 0.0114626267171603 0.00324842592671561" rpy="0 0 0" />
+			<mass value="0.0024583573430902" />
+			<inertia ixx="8.02407963934757E-08" ixy="-6.59250875166553E-09" ixz="-3.07796695485008E-11" iyy="6.18424662609382E-08" iyz="-3.08476291172074E-11" izz="8.42610823013142E-08" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_index_J12.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_index_J12.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J12" type="revolute">
+		<origin xyz="-0.0015 0.023 0" rpy="0 0 0" />
+		<parent link="right_index_J11" />
+		<child link="right_index_J12" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J11" multiplier="0.3" offset="0" />
+	</joint>
+	<link name="right_middle_J13">
+		<inertial>
+			<origin xyz="0.00093448572400906 0.0191929103014755 -0.00342872444496174" rpy="0 0 0" />
+			<mass value="0.00545626791359473" />
+			<inertia ixx="4.48871160567151E-07" ixy="-4.71994440627214E-09" ixz="1.91334158820802E-10" iyy="2.87363177525294E-07" iyz="1.59686790225507E-12" izz="3.90655204851821E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_middle_J13.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_middle_J13.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J13" type="revolute">
+		<origin xyz="0.000499999999999945 0.0049248143934115 0.125899819314373" rpy="1.54697555534349 0 0" />
+		<parent link="right_wrist_J5" />
+		<child link="right_middle_J13" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="1.57" effort="-10" velocity="10" />
+	</joint>
+	<link name="right_middle_J14">
+		<inertial>
+			<origin xyz="-0.00118665470615636 0.0114470881360954 -0.00342835648925043" rpy="0 0 0" />
+			<mass value="0.00348681203810925" />
+			<inertia ixx="1.45566387781986E-07" ixy="-8.62035369789367E-09" ixz="5.04714736200374E-12" iyy="1.20774944205303E-07" iyz="7.26536743973101E-12" izz="1.42496278066435E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_middle_J14.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_middle_J14.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J14" type="revolute">
+		<origin xyz="0.00147757420956629 0.0377689999999999 0" rpy="0 0 0" />
+		<parent link="right_middle_J13" />
+		<child link="right_middle_J14" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J13" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="right_middle_J15">
+		<inertial>
+			<origin xyz="0.000438288966745082 0.0120931291119732 -0.0034304361065291" rpy="0 0 0" />
+			<mass value="0.00288671634599157" />
+			<inertia ixx="1.0487197371271E-07" ixy="-8.6159556716268E-09" ixz="-4.02058520089483E-11" iyy="8.08259928414099E-08" iyz="-3.99246485498087E-11" izz="1.10125860384991E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_middle_J15.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_middle_J15.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J15" type="revolute">
+		<origin xyz="-0.00158249999999993 0.024265 0" rpy="0 0 0" />
+		<parent link="right_middle_J14" />
+		<child link="right_middle_J15" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J14" multiplier="0.3" offset="0" />
+	</joint>
+	<link name="right_little_J16">
+		<inertial>
+			<origin xyz="-8.98024008864629E-05 0.0206467540578174 -0.00517311514485388" rpy="0 0 0" />
+			<mass value="0.0179601624148531" />
+			<inertia ixx="4.63043215432541E-06" ixy="3.28723230229524E-08" ixz="-2.80419616476293E-08" iyy="2.14820492587722E-06" iyz="1.31085473365563E-06" izz="3.35618938107579E-06" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_little_J16.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_little_J16.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J16" type="revolute">
+		<origin xyz="0 -0.0245669987447082 0.0562148526643473" rpy="2.45248970858413 0 0" />
+		<parent link="right_wrist_J5" />
+		<child link="right_little_J16" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0.3" effort="-10" velocity="10" />
+	</joint>
+	<link name="right_little_J17">
+		<inertial>
+			<origin xyz="0.000738285310396103 -0.0151633108275956 -0.00354238308959057" rpy="0 0 0" />
+			<mass value="0.00269063748938314" />
+			<inertia ixx="1.38161588926314E-07" ixy="1.4527831711997E-09" ixz="-5.86415639001342E-11" iyy="8.84498221632085E-08" iyz="5.34062842370107E-13" izz="1.20242933188226E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_little_J17.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_little_J17.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J17" type="revolute">
+		<origin xyz="0.0003000000000003 0.0457645578352131 -0.0251422576705387" rpy="2.5138228945981 0 0" />
+		<parent link="right_little_J16" />
+		<child link="right_little_J17" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J16" multiplier="5" offset="0" />
+	</joint>
+	<link name="right_little_J18">
+		<inertial>
+			<origin xyz="-5.03587732555433E-05 -0.00909197174782861 -0.00354251907251552" rpy="0 0 0" />
+			<mass value="0.00171949550424563" />
+			<inertia ixx="4.4224354490247E-08" ixy="3.34459922111536E-09" ixz="-2.13170417332028E-12" iyy="3.7763582384764E-08" iyz="3.02539180861974E-12" izz="4.38544333330661E-08" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_little_J18.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_little_J18.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J18" type="revolute">
+		<origin xyz="0.00116735365277099 -0.0298393000000001 0" rpy="0 0 0" />
+		<parent link="right_little_J17" />
+		<child link="right_little_J18" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J17" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="right_little_J19">
+		<inertial>
+			<origin xyz="0.00034628949288168 -0.00955417083022873 -0.00354106858562218" rpy="0 0 0" />
+			<mass value="0.00142350707680254" />
+			<inertia ixx="3.2279550726875E-08" ixy="2.65202727902269E-09" ixz="1.23565562115379E-11" iyy="2.48779291907755E-08" iyz="-1.24006550660179E-11" izz="3.38968343808897E-08" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_little_J19.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_little_J19.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J19" type="revolute">
+		<origin xyz="0.000626873297826347 -0.0192009954216176 0" rpy="0 0 0" />
+		<parent link="right_little_J18" />
+		<child link="right_little_J19" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J18" multiplier="0.3" offset="0" />
+	</joint>
+	<link name="right_ring_J20">
+		<inertial>
+			<origin xyz="-0.000105678808513643 0.0177423765079019 -0.00227735628746051" rpy="0 0 0" />
+			<mass value="0.0133231613815407" />
+			<inertia ixx="2.53720274403352E-06" ixy="2.24359389501848E-08" ixz="-1.26426387567194E-08" iyy="1.26031160104865E-06" iyz="5.29805441775577E-07" izz="1.92896860086194E-06" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_ring_J20.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_ring_J20.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J20" type="revolute">
+		<origin xyz="0 -0.00462154667570825 0.0804255194490987" rpy="2.45248970858413 0 0" />
+		<parent link="right_wrist_J5" />
+		<child link="right_ring_J20" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0.3" effort="-10" velocity="10" />
+	</joint>
+	<link name="right_ring_J21">
+		<inertial>
+			<origin xyz="0.000885765472167344 -0.0181923324616347 -0.00325000959007114" rpy="0 0 0" />
+			<mass value="0.0046466326400844" />
+			<inertia ixx="3.43446584998095E-07" ixy="3.6113649242351E-09" ixz="-1.45752572936174E-10" iyy="2.19871458526461E-07" iyz="1.31703590233812E-12" izz="2.98903865706348E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_ring_J21.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_ring_J21.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J21" type="revolute">
+		<origin xyz="0.000300000000000133 0.0353164766008508 -0.0193875475750147" rpy="2.3454052782576 0 0" />
+		<parent link="right_ring_J20" />
+		<child link="right_ring_J21" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J20" multiplier="5" offset="0" />
+	</joint>
+	<link name="right_ring_J22">
+		<inertial>
+			<origin xyz="-0.00112479920719416 -0.0108503138070926 -0.00325048082916662" rpy="0 0 0" />
+			<mass value="0.0029694193874999" />
+			<inertia ixx="1.11378037517521E-07" ixy="6.5957091819035E-09" ixz="-3.58278563863887E-12" iyy="9.24091422366065E-08" iyz="4.56068615493303E-12" izz="1.09028794715161E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_ring_J22.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_ring_J22.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J22" type="revolute">
+		<origin xyz="0.00140054427447051 -0.0358 0" rpy="0 0 0" />
+		<parent link="right_ring_J21" />
+		<child link="right_ring_J22" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J21" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="right_ring_J23">
+		<inertial>
+			<origin xyz="0.0004154465780426 -0.0114626823210635 -0.00324842438070902" rpy="0 0 0" />
+			<mass value="0.00245836239377154" />
+			<inertia ixx="8.02415848752415E-08" ixy="6.5924895014897E-09" ixz="3.07368349181426E-11" iyy="6.18423906188225E-08" iyz="-3.08203788063756E-11" izz="8.4261851740819E-08" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_ring_J23.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/right_ring_J23.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J23" type="revolute">
+		<origin xyz="-0.00149999999999995 -0.023 0" rpy="0 0 0" />
+		<parent link="right_ring_J22" />
+		<child link="right_ring_J23" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0" effort="-10" velocity="10" />
+		<mimic joint="J22" multiplier="0.3" offset="0" />
+	</joint>
+	<link name="left_shoulder_up_down_J24">
+		<inertial>
+			<origin xyz="-0.011709027508866 -0.0473030767898499 -0.0490241966657768" rpy="0 0 0" />
+			<mass value="0.366045748940139" />
+			<inertia ixx="0.000481352210731466" ixy="-8.02206075381562E-06" ixz="-5.21762437502641E-06" iyy="0.000219240097264633" iyz="-1.93959927720844E-05" izz="0.000334805992705867" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_shoulder_up_down_J24.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="1 1 1 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_shoulder_up_down_J24.STL" />
+			</geometry>
+		</collision>
+	</link>
+
+
+
+
+
+
+
+	<!--left hand   -->
+
+
+
+
+
+	<joint name="J24" type="revolute">
+		<origin xyz="0.14349 -0.0547 0.90833" rpy="1.5708 0 0" />
+		<parent link="base_link" />
+		<child link="left_shoulder_up_down_J24" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="1" effort="1" velocity="10" />
+	</joint>
+	<link name="left_shoulder_forw_backw_J25">
+		<inertial>
+			<origin xyz="0.0231032969066377 0.00279018284147345 0.0447822812601939" rpy="0 0 0" />
+			<mass value="0.405574951034979" />
+			<inertia ixx="0.00045930773188588" ixy="5.88188195853634E-06" ixz="-1.17020062224993E-06" iyy="0.000360847956459487" iyz="1.19733191593354E-05" izz="0.000344228107819219" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_shoulder_forw_backw_J25.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="1 1 1 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_shoulder_forw_backw_J25.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J25" type="revolute">
+		<origin xyz="0.011824 -0.03981 -0.045862" rpy="-1.5708 0.010798 -1.5708" />
+		<parent link="left_shoulder_up_down_J24" />
+		<child link="left_shoulder_forw_backw_J25" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="1.57" effort="-10" velocity="10" />
+	</joint>
+	<link name="left_bicep_J26">
+		<inertial>
+			<origin xyz="0.00664392075779083 0.000201403954469452 -0.082782114943592" rpy="0 0 0" />
+			<mass value="0.500684348318072" />
+			<inertia ixx="0.000405508349808579" ixy="-4.43264630740654E-07" ixz="8.59139485963849E-05" iyy="0.000666172399407517" iyz="2.28923617458689E-07" izz="0.000403330494710682" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_bicep_J26.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="1 1 1 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_bicep_J26.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J26" type="revolute">
+		<origin xyz="0.062925 0.00020055 0.06637" rpy="-1.57 0 1.57" />
+		<parent link="left_shoulder_forw_backw_J25" />
+		<child link="left_bicep_J26" />
+		<axis xyz="9.8768E-05 0 1" />
+		<limit lower="-0.6" upper="0.6" effort="10" velocity="10" />
+	</joint>
+	<link name="left_hand_J27">
+		<inertial>
+			<origin xyz="0.0896581668372653 0.0104780725768742 0.00750611346652837" rpy="0 0 0" />
+			<mass value="0.305840580390109" />
+			<inertia ixx="0.00050605673108009" ixy="5.36713437437591E-08" ixz="4.18239433454937E-06" iyy="0.000493919505026122" iyz="2.21669412286501E-06" izz="0.000341656614345577" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_hand_J27.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_hand_J27.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J27" type="revolute">
+		<origin xyz="0.0311115203223557 0.000651653103004152 -0.224760630666411" rpy="1.5707963267949 1.5707963267949 3.14" />
+		<parent link="left_bicep_J26" />
+		<child link="left_hand_J27" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="1.57" effort="1" velocity="10" />
+	</joint>
+
+
+
+
+
+
+	<link name="left_wrist_J28">
+		<inertial>
+			<origin xyz="6.66629314221567E-05 0.00659266120720403 0.0570650016586986" rpy="0 0 0" />
+			<mass value="0.0842248652210999" />
+			<inertia ixx="8.68408181734921E-05" ixy="-7.22426686280789E-08" ixz="-3.07010407356253E-07" iyy="6.1091467715983E-05" iyz="-1.95634381700493E-05" izz="3.10482469647847E-05" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_wrist_J28.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_wrist_J28.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J28" type="revolute">
+		<origin xyz="0.283286661889347 0.0114518877264726 0.00110813844468826" rpy="-1.56565407336858 0 -1.57079632679489" />
+		<parent link="left_hand_J27" />
+		<child link="left_wrist_J28" />
+		<axis xyz="0 0 1" />
+		<limit lower="-1.57" upper="1.57" effort="10" velocity="10" />
+	</joint>
+
+
+
+
+
+	<link name="left_thump_J29">
+		<inertial>
+			<origin xyz="0.00266841724897404 0.0156465507879137 -0.000404617053655409" rpy="0 0 0" />
+			<mass value="0.0103243116380133" />
+			<inertia ixx="7.30194544069283E-07" ixy="7.13251963114658E-08" ixz="1.84454929948079E-08" iyy="9.6368513048861E-07" iyz="2.31613384147751E-08" izz="1.09991279381961E-06" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_thump_J29.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_thump_J29.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J29" type="revolute">
+		<origin xyz="0 0.0301537554807792 0.059910432745544" rpy="-1.5707963267949 -1.48772480012051 1.5707963267949" />
+		<parent link="left_wrist_J28" />
+		<child link="left_thump_J29" />
+		<axis xyz="1 0 0" />
+		<limit lower="0" upper="1.57" effort="1" velocity="10" />
+	</joint>
+
+
+
+
+
+
+	<link name="left_thump_J30">
+		<inertial>
+			<origin xyz="-0.00263831390318975 -0.0173217886122727 0.00325000634147521" rpy="0 0 0" />
+			<mass value="0.00578743340949038" />
+			<inertia ixx="3.72666566645898E-07" ixy="-5.56844517299923E-09" ixz="-7.68859137038115E-13" iyy="3.35633839819086E-07" iyz="-2.12370246070054E-13" izz="2.90221037735518E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_thump_J30.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_thump_J30.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J30" type="revolute">
+		<origin xyz="0.0174453209292056 0.0273381512707959 -0.00229936946368775" rpy="-3.14159265358979 1.13446401379632 -0.720831183683775" />
+		<parent link="left_thump_J29" />
+		<child link="left_thump_J30" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J29" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="left_thump_J31">
+		<inertial>
+			<origin xyz="0.000487616392648937 -0.0133119368880611 0.00324059459410164" rpy="0 0 0" />
+			<mass value="0.00408617164944154" />
+			<inertia ixx="1.80456974298329E-07" ixy="-1.31781607449749E-08" ixz="1.40429960417958E-10" iyy="1.66933941443545E-07" iyz="2.09302687967355E-11" izz="1.95951523948477E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_thump_J31.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_thump_J31.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J31" type="revolute">
+		<origin xyz="-0.0018602449003523 -0.0280817818236706 0" rpy="0 0 0" />
+		<parent link="left_thump_J30" />
+		<child link="left_thump_J31" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J30" multiplier="0.3" offset="0" />
+	</joint>
+
+
+
+
+
+
+
+
+	<link name="left_index_J32">
+		<inertial>
+			<origin xyz="-0.000885765449923803 0.0181923325649633 0.00424999037991276" rpy="0 0 0" />
+			<mass value="0.00464663267119149" />
+			<inertia ixx="3.43446591970146E-07" ixy="3.61136627501463E-09" ixz="1.45754936161765E-10" iyy="2.1987146159152E-07" iyz="-1.31674951459423E-12" izz="2.98903867414834E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_index_J32.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_index_J32.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J32" type="revolute">
+		<origin xyz="-0.000499999999999973 0.0394980536523552 0.120903840169765" rpy="1.47393402484139 0 0" />
+		<parent link="left_wrist_J28" />
+		<child link="left_index_J32" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="1.57" effort="1" velocity="10" />
+	</joint>
+	<link name="left_index_J33">
+		<inertial>
+			<origin xyz="-0.00112480046063443 0.01085031199292 -0.00424950502456562" rpy="0 0 0" />
+			<mass value="0.00296941989314023" />
+			<inertia ixx="1.11378077675951E-07" ixy="-6.59571300984243E-09" ixz="3.54650309127025E-12" iyy="9.2409169179815E-08" iyz="4.42494493324929E-12" izz="1.09028794172596E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_index_J33.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_index_J33.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J33" type="revolute">
+		<origin xyz="-0.00140054427447031 0.0358 0" rpy="-3.14159265358979 0 3.14159265358979" />
+		<parent link="left_index_J32" />
+		<child link="left_index_J33" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J32" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="left_index_J34">
+		<inertial>
+			<origin xyz="0.000415446762557725 0.0114626819413309 -0.00425157570342784" rpy="0 0 0" />
+			<mass value="0.00245836245787869" />
+			<inertia ixx="8.02415834864142E-08" ixy="-6.59249255397104E-09" ixz="-3.07378610737094E-11" iyy="6.18423943807246E-08" iyz="-3.08219508070329E-11" izz="8.42618513677087E-08" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_index_J34.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_index_J34.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J34" type="revolute">
+		<origin xyz="-0.00150000000000008 0.023 0" rpy="0 0 0" />
+		<parent link="left_index_J33" />
+		<child link="left_index_J34" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J33" multiplier="0.3" offset="0" />
+	</joint>
+	
+
+
+
+
+
+
+
+
+
+
+	<link name="left_middle_J35">
+		<inertial>
+			<origin xyz="-0.000934483755357485 0.0191929098670874 0.00342873504525023" rpy="0 0 0" />
+			<mass value="0.00545626794340784" />
+			<inertia ixx="4.48870958849462E-07" ixy="4.71991109294057E-09" ixz="1.90753405693071E-10" iyy="2.87363163162531E-07" iyz="-1.67672644515456E-12" izz="3.90655320254193E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_middle_J35.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_middle_J35.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J35" type="revolute">
+		<origin xyz="0.000500000000000056 0.0117853674941978 0.12573636472946" rpy="1.54697555534349 0 0" />
+		<parent link="left_wrist_J28" />
+		<child link="left_middle_J35" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="1.57" effort="1" velocity="10" />
+	</joint>
+	<link name="left_middle_J36">
+		<inertial>
+			<origin xyz="-0.00118665691835254 0.0114470870553567 -0.00342831490792655" rpy="0 0 0" />
+			<mass value="0.0034868115110658" />
+			<inertia ixx="1.45566368145606E-07" ixy="-8.62030555929445E-09" ixz="4.90870967451851E-12" iyy="1.20774899493003E-07" iyz="6.82588319977854E-12" izz="1.42496244053076E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_middle_J36.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_middle_J36.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J36" type="revolute">
+		<origin xyz="-0.00147757420956623 0.0377689999999999 0" rpy="3.14159265358979 0 -3.14159265358979" />
+		<parent link="left_middle_J35" />
+		<child link="left_middle_J36" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J35" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="left_middle_J37">
+		<inertial>
+			<origin xyz="0.000438295033802494 0.0120931313817823 -0.00343041176040154" rpy="0 0 0" />
+			<mass value="0.0028867105788087" />
+			<inertia ixx="1.04872547967491E-07" ixy="-8.6160991022012E-09" ixz="-4.01654046533511E-11" iyy="8.08255068019359E-08" iyz="-4.02694618159568E-11" izz="1.10126871303978E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_middle_J37.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_middle_J37.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J37" type="revolute">
+		<origin xyz="-0.00158250000000001 0.024265 0" rpy="0 0 0" />
+		<parent link="left_middle_J36" />
+		<child link="left_middle_J37" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J36" multiplier="0.3" offset="0" />
+	</joint>
+
+
+
+
+
+
+
+
+
+
+<link name="left_ring_J38">
+		<inertial>
+			<origin xyz="9.12881251669551E-05 0.0177155889737994 -0.00225754982367157" rpy="0 0 0" />
+			<mass value="0.0133046354671802" />
+			<inertia ixx="2.52595640779639E-06" ixy="-2.44240376458657E-08" ixz="2.10118297569615E-08" iyy="1.25628686182119E-06" iyz="5.24431904651178E-07" izz="1.92184572573527E-06" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_ring_J38.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_ring_J38.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J38" type="revolute">
+		<origin xyz="0 -0.00509139977148831 0.0798551911005397" rpy="2.45248970858413 0 0" />
+		<parent link="left_wrist_J28" />
+		<child link="left_ring_J38" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0.3" effort="1" velocity="10" />
+	</joint>
+	<link name="left_ring_J39">
+		<inertial>
+			<origin xyz="-0.000598578601251454 -0.0182040381703557 -0.00424997506193665" rpy="0 0 0" />
+			<mass value="0.00464663430459442" />
+			<inertia ixx="3.43531119459082E-07" ixy="-1.66024936439166E-09" ixz="-1.46369638380522E-10" iyy="2.19788189716026E-07" iyz="-3.10032682951777E-12" izz="2.98904653320714E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_ring_J39.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_ring_J39.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J39" type="revolute">
+		<origin xyz="0.000300000000000022 0.0346017819984782 -0.0200869842235681" rpy="2.3454052782576 0 0" />
+		<parent link="left_ring_J38" />
+		<child link="left_ring_J39" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0" effort="-1" velocity="10" />
+		<mimic joint="J38" multiplier="5" offset="0" />
+	</joint>
+	<link name="left_ring_J40">
+		<inertial>
+			<origin xyz="0.00129586448134292 -0.010831217561988 -0.00424969953385764" rpy="0 0 0" />
+			<mass value="0.00296941919084" />
+			<inertia ixx="1.1158144624313E-07" ixy="-6.29327298143975E-09" ixz="-3.96444957041505E-12" iyy="9.22057737970092E-08" iyz="-6.30471508118228E-12" izz="1.09028862760786E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_ring_J40.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_ring_J40.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J40" type="revolute">
+		<origin xyz="-0.00083546011251015 -0.03581764272904 0" rpy="0 0 0" />
+		<parent link="left_ring_J39" />
+		<child link="left_ring_J40" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J39" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="left_ring_J41">
+		<inertial>
+			<origin xyz="-0.000234514601606145 -0.0114677610994188 -0.00425157383913447" rpy="0 0 0" />
+			<mass value="0.00245835766242262" />
+			<inertia ixx="8.04443226991858E-08" ixy="-6.29891086608242E-09" ixz="3.02866414657878E-11" iyy="6.16390081580507E-08" iyz="3.13137411318197E-11" izz="8.42611641105566E-08" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_ring_J41.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_ring_J41.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J41" type="revolute">
+		<origin xyz="0.00186274410972295 -0.0229734669647769 0" rpy="0 0 0" />
+		<parent link="left_ring_J40" />
+		<child link="left_ring_J41" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J40" multiplier="0.3" offset="0" />
+	</joint>
+
+
+
+
+
+
+
+<link name="left_little_J42">
+		<inertial>
+			<origin xyz="5.57601754879733E-05 0.0206404513348552 -0.00516910697804673" rpy="0 0 0" />
+			<mass value="0.0179559453538315" />
+			<inertia ixx="4.62597621783889E-06" ixy="-3.48512485823296E-08" ixz="1.46364935873009E-08" iyy="2.14739429140033E-06" iyz="1.30881552604496E-06" izz="3.35349486108658E-06" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_little_J42.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_little_J42.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J42" type="revolute">
+		<origin xyz="0 -0.0245669987447054 0.0562148526643474" rpy="2.45248970858413 0 0" />
+		<parent link="left_wrist_J28" />
+		<child link="left_little_J42" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0.3" effort="1" velocity="10" />
+	</joint>
+	<link name="left_little_J43">
+		<inertial>
+			<origin xyz="-0.000738287937155496 -0.0151633112560695 0.00354239702706284" rpy="0 0 0" />
+			<mass value="0.00269063743360923" />
+			<inertia ixx="1.38161686292443E-07" ixy="-1.45279930256721E-09" ixz="-5.89391815960085E-11" iyy="8.84498259540602E-08" iyz="-4.9309021345745E-13" izz="1.2024287228934E-07" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_little_J43.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_little_J43.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J43" type="revolute">
+		<origin xyz="-0.000299999999999995 0.0497737275956689 -0.0196177359976469" rpy="2.5138228945981 0 0" />
+		<parent link="left_little_J42" />
+		<child link="left_little_J43" />
+		<axis xyz="0 0 -1" />
+		<limit lower="0" upper="0" effort="-1" velocity="10" />
+		<mimic joint="J42" multiplier="5" offset="0" />
+	</joint>
+	<link name="left_little_J44">
+		<inertial>
+			<origin xyz="0.000937561348390487 -0.00904366058604783 0.00354287922771984" rpy="0 0 0" />
+			<mass value="0.00171949606742309" />
+			<inertia ixx="4.48125534949881E-08" ixy="-2.65327828198805E-09" ixz="-2.25347798946083E-12" iyy="3.71753080424733E-08" iyz="-1.13081502448246E-12" izz="4.38545421840034E-08" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_little_J44.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.827450980392157 0.83921568627451 0.827450980392157 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_little_J44.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J44" type="revolute">
+		<origin xyz="-0.00116735365277101 -0.0298393 0" rpy="0 0 0" />
+		<parent link="left_little_J43" />
+		<child link="left_little_J44" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J43" multiplier="-0.7" offset="0" />
+	</joint>
+	<link name="left_little_J45">
+		<inertial>
+			<origin xyz="-0.00034627 -0.009554 0.0035411" rpy="0 0 0" />
+			<mass value="0.0014235" />
+			<inertia ixx="3.2279E-08" ixy="-2.6521E-09" ixz="1.2404E-11" iyy="2.4878E-08" iyz="1.2445E-11" izz="3.3896E-08" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_little_J45.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.82745 0.83922 0.82745 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/left_little_J45.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J45" type="revolute">
+		<origin xyz="0.00125025000000001 -0.0191705 0" rpy="0 0 0" />
+		<parent link="left_little_J44" />
+		<child link="left_little_J45" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0" effort="1" velocity="10" />
+		<mimic joint="J44" multiplier="0.3" offset="0" />
+	</joint>
+
+
+
+
+
+
+
+
+	<link name="head_up_down_J46">
+		<inertial>
+			<origin xyz="-0.011492 0.020219 1.9709E-05" rpy="0 0 0" />
+			<mass value="0.078731" />
+			<inertia ixx="6.175E-05" ixy="-3.7225E-06" ixz="-9.5696E-10" iyy="4.3027E-05" iyz="4.3182E-08" izz="3.5003E-05" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/head_up_down_J46.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="1 1 1 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/head_up_down_J46.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J46" type="revolute">
+		<origin xyz="0.00015332 0.023737 1.0591" rpy="-1.5814 1.4972 1.5601" />
+		<parent link="base_link" />
+		<child link="head_up_down_J46" />
+		<axis xyz="0 0 -1" />
+		<limit lower="-0.7" upper="0.7" effort="10" velocity="10" />
+	</joint>
+	<link name="head_rl_J47">
+		<inertial>
+			
+			<origin xyz="-0.0019065 -0.01805 0.055037" rpy="0 0 0" />
+			<mass value="0.73534" />
+			<inertia ixx="0.00071005" ixy="-8.8466E-07" ixz="8.7808E-07" iyy="0.00057552" iyz="2.3817E-06" izz="0.00076921" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/head_rl_J47.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.75294 0.75294 0.75294 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://zetax/meshes/head_rl_J47.STL" />
+			</geometry>
+		</collision>
+	</link>
+	<joint name="J47" type="revolute">
+		<origin xyz="-0.023825 -0.0022254 0" rpy="1.5708 1.5708 -1.5231" />
+		<parent link="head_up_down_J46" />
+		<child link="head_rl_J47" />
+		<axis xyz="0 0 -1" />
+		<limit lower="-1" upper="1" effort="1" velocity="10" />
+	</joint>
+	
+	<xacro:default_transmission number="1"/>
+	<xacro:default_transmission number="2"/>
+	<xacro:default_transmission number="3"/>
+	<xacro:default_transmission number="4"/>
+	<xacro:default_transmission number="5"/>
+	<xacro:default_transmission number="7"/>
+	<xacro:default_transmission number="10"/>
+	<xacro:default_transmission number="13"/>
+	<xacro:default_transmission number="16"/>
+	<xacro:default_transmission number="20"/>
+	<xacro:default_transmission number="24"/>
+	<xacro:default_transmission number="25"/>
+	<xacro:default_transmission number="26"/>
+	<xacro:default_transmission number="27"/>
+	<xacro:default_transmission number="28"/>
+	<xacro:default_transmission number="29"/>
+	<xacro:default_transmission number="32"/>
+	<xacro:default_transmission number="35"/>
+	<xacro:default_transmission number="38"/>
+	<xacro:default_transmission number="42"/>
+	<xacro:default_transmission number="46"/>
+	<xacro:default_transmission number="47"/>
+	<!-- gazebo ros_control plugin -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/zetaxbot</robotNamespace>
+		</plugin>
+	</gazebo>
+</robot>
