@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: zetax
+    relative_path: urdf/zetax.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/zetax.srdf
+  CONFIG:
+    author_name: aaa
+    author_email: aaa@aaa.com
+    generated_timestamp: 1688910914

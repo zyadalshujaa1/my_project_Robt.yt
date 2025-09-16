@@ -1,0 +1,5 @@
+movement_name,shoulder_angle_1,shoulder_angle_2,biceps_angle,elbow_angle,wrist_angle
+init,0,0,0,0,0
+hi,0,76,0,14,0
+sure,0,76,0,76,0
+move2,0.0,90,-67,90,-90

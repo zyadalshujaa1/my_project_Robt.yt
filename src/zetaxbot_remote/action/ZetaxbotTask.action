@@ -1,0 +1,9 @@
+# Goal         
+# int64 task_number
+string movement_name
+---
+# Result
+bool success
+---
+# Feedback
+int64 percentage

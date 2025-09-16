@@ -1,0 +1,10 @@
+<launch>
+
+    <!-- Launch the task action server -->
+    <node pkg="zetaxbot_remote" type="task_server.py" name="task_server"  respawn="true" output="screen">
+        <!-- <param name="cwd" value="$(find zetaxbot_remote)" /> -->
+        </node>
+    <!-- Launch the remote interface node that handles remote requests -->
+    <node pkg="zetaxbot_remote" type="alexa_interface.py" name="alexa_interface" respawn="true" output="screen"/>
+    
+</launch>

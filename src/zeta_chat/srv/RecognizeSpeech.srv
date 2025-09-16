@@ -1,0 +1,5 @@
+# Service request
+bool voice_playing
+
+# Service response
+string audio_text
