@@ -1,7 +1,7 @@
 # 🤖 Humanoid Robot Project
 
 <!-- Add a hero image of your robot here -->
-![Robot Preview](images/robot.jpg)
+![Robot Preview](zeta_robot.jpg)
 
 ---
 
@@ -41,7 +41,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 
 > Example: The Raspberry Pi runs ROS to integrate **vision, speech recognition, motion tracking, and chatbot services** into a unified system.
 
-![ROS Integration](images/ros.png)
+![ROS Integration]()
 
 ---
 
@@ -54,7 +54,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Emotion Detection** – Deep learning model to detect emotions  
 - **OCR (Optical Character Recognition)** – Read text from images (online & offline)  
 
-![Computer Vision](images/computer-vision.png)
+![Computer Vision](computer-vision2.jpg)
 
 ---
 
@@ -70,7 +70,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Depth imaging & skeletal motion tracking**  
 - Save and replay robot movements  
 
-![Motion](images/motion.png)
+![Motion]
 
 ---
 
@@ -78,7 +78,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Text-to-Speech (TTS)** engine for natural robot speech  
 - Works both **offline** and **online**  
 
-![Speech](images/speech.png)
+![Speech]
 
 ---
 
@@ -86,7 +86,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - Integrated with **ChatGPT API**  
 - Handles questions, casual conversations, and interactive tasks  
 
-![Chatbot](images/chatbot.png)
+![Chatbot]
 
 ---
 
