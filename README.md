@@ -1,7 +1,7 @@
 # 🤖 Humanoid Robot Project
 
 <!-- Add a hero image of your robot here -->
-![Robot Preview](zeta_robot.jpg)
+![Robot Preview](images/zeta_robot.jpg)
 
 ---
 
