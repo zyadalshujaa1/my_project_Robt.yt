@@ -46,7 +46,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 
 > Example: The Raspberry Pi runs ROS to integrate **vision, speech recognition, motion tracking, and chatbot services** into a unified system.
 
-![ROS Integration] <img src="images/zeta_robot.jpg" alt="Zeta Robot" width="300" height="400">
+![ROS Integration] <img src="imageszeta_robot.jpg" alt="Zeta Robot" width="300" height="400">
 
 ---
 
@@ -59,7 +59,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Emotion Detection** – Deep learning model to detect emotions  
 - **OCR (Optical Character Recognition)** – Read text from images (online & offline)  
 
-![Computer Vision](images/computer-vision.jpg)
+![Computer Vision](images/computer-vision1.jpg)
 
 ---
 
