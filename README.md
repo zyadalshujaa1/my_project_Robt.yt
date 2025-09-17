@@ -1,7 +1,9 @@
 # 🤖 Humanoid Robot Project
 
 <!-- Add a hero image of your robot here -->
-![Robot Preview](images/robot.jpg)
+<p align="center">
+  <img src="images/robot.jpg" alt="Me and Zeta Robot" width="500">
+</p>
 
 ---
 
@@ -15,7 +17,7 @@ The goal of this project is to build an affordable and modular humanoid robot th
 - AI + Robotics integration experiments  
 - Personal assistant and service robot applications  
 <p align="center">
-  <img src="images/the_roadmap.jpg" alt="Me and Zeta Robot" width="500">
+  <img src="images/The_roadmap.jpg" alt="Me and Zeta Robot" width="500">
 </p>
 
 ---
@@ -57,7 +59,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Emotion Detection** – Deep learning model to detect emotions  
 - **OCR (Optical Character Recognition)** – Read text from images (online & offline)  
 
-![Computer Vision](images/computer-vision.png)
+![Computer Vision](images/computer-vision.jpg)
 
 ---
 
