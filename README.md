@@ -27,8 +27,11 @@ The humanoid robot is built using the following hardware:
 5. **Speakers & Microphone** – Enable natural voice interaction with the robot.  
 6. **3D Printed Parts** – The robot body, arms, and legs are constructed using CAD designs and 3D printing.  
 
-👉 Full details are available in the [Hardware Documentation](docs/hardware.md)
-![Zeta Robot](images/imageszeta_robot.jpg)
+👉 Full details are available in the [Hardware Documentation](docs/hardware.md).
+
+
+<img src="images/imageszeta_robot.jpg" alt="Zeta Robot" width="300" height="400">
+
 
 
 ---
