@@ -23,7 +23,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Communicates with Raspberry Pi via **SPI protocol**  
 - Converts Raspberry Pi commands into **servo motor movements**  
 
-![ESP32](images/esp32_code.jpg)
+![ESP32](images/docs/esp32_code.jpg)
 
 ---
 
@@ -47,7 +47,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
   - Skeletal tracking  
 
 <p align="center">
-  <img src="images/computer-vision2.jpg" alt="Kinect Sensor" width="500">
+  <img src="images/docs/computer-vision2.jpg" alt="Kinect Sensor" width="500">
 </p>
 ---
 
@@ -66,9 +66,9 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Provide the humanoid form of the robot  
 
 <p align="center">
-  <img src="images/3d_parts.jpg" alt="3D Printed Part" width="250">
-  <img src="images/3d_parts1.jpg" alt="3D Printed Part 1" width="250">
-  <img src="images/3d_parts2.jpg" alt="3D Printed Part 2" width="250">
+  <img src="images/docs/3d_parts.jpg" alt="3D Printed Part" width="250">
+  <img src="images/docs/3d_parts1.jpg" alt="3D Printed Part 1" width="250">
+  <img src="images/docs/3d_parts2.jpg" alt="3D Printed Part 2" width="250">
 </p>
 ---
 
