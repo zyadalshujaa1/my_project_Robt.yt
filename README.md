@@ -1,9 +1,8 @@
 # 🤖 Humanoid Robot Project
 
 <!-- Add a hero image of your robot here -->
-<p align="center">
+
   <img src="images/zeta_robot.jpg" alt="Me and Zeta Robot" width="500">
-</p>
 
 ---
 
