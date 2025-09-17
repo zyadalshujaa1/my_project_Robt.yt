@@ -47,7 +47,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
   - Skeletal tracking  
 
 <p align="center">
-  <img src="images/docs/computer-vision2.jpg" alt="Kinect Sensor" width="500">
+  <img src="../images/docs/computer-vision2.jpg" alt="Kinect Sensor" width="500">
 </p>
 ---
 
