@@ -2,7 +2,11 @@
 
 <!-- Add a hero image of your robot here -->
 
-<img src="images/zeta_robot.jpg" alt="Zeta Robot" width="400" height="400">
+<p align="center">
+  <img src="images/me_and_robot.jpg" alt="Me and Zeta Robot" width="500">
+</p>
+
+
 ---
 
 ## 📌 Project Overview
