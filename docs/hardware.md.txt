@@ -46,7 +46,9 @@ This document describes the hardware components used in the **Humanoid Robot Pro
   - Emotion & gender recognition  
   - Skeletal tracking  
 <p align="center">
-  <img src="images/computer-vision2.jpg" alt="Me and Zeta Robot" width="500">
+  <img src="images/computer-vision2.jpg" alt="Kinect Sensor" width="500">
+</p>
+
 
 ---
 
