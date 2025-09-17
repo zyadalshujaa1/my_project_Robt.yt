@@ -2,7 +2,7 @@
 
 <!-- Add a hero image of your robot here -->
 <p align="center">
-  <img src="images/robot.jpg" alt="Me and Zeta Robot" width="500">
+  <img src="images/zeta_robot.jpg" alt="Me and Zeta Robot" width="500">
 </p>
 
 ---
@@ -17,7 +17,7 @@ The goal of this project is to build an affordable and modular humanoid robot th
 - AI + Robotics integration experiments  
 - Personal assistant and service robot applications  
 <p align="center">
-  <img src="images/The_roadmap.jpg" alt="Me and Zeta Robot" width="500">
+  <img src="images/The_roadmap.jpg" alt="Me and Zeta Robot" width="600">
 </p>
 
 ---
@@ -46,7 +46,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 
 > Example: The Raspberry Pi runs ROS to integrate **vision, speech recognition, motion tracking, and chatbot services** into a unified system.
 
-![ROS Integration]
+![ROS Integration] <img src="images/zeta_robot.jpg" alt="Zeta Robot" width="300" height="400">
 
 ---
 
