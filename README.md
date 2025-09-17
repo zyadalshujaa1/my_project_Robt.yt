@@ -2,7 +2,7 @@
 
 <!-- Add a hero image of your robot here -->
 
-  <img src="images/zeta_robot.jpg" alt="Me and Zeta Robot" width="500">
+  <img src="images/zeta_robot.jpg" alt="Me and Zeta Robot" width="300">
 
 ---
 
