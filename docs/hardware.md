@@ -23,7 +23,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Communicates with Raspberry Pi via **SPI protocol**  
 - Converts Raspberry Pi commands into **servo motor movements**  
 
-![ESP32](../images/esp32_code.jpg)
+
 <img src="../images/esp32_code.jpg" alt="3D Printed Part 1" width="600">
 ---
 
