@@ -28,7 +28,7 @@ The humanoid robot is built using the following hardware:
 6. **3D Printed Parts** – The robot body, arms, and legs are constructed using CAD designs and 3D printing.  
 
 👉 Full details are available in the [Hardware Documentation](docs/hardware.md).
-
+(images/imageszeta_robot.jpg)
 ---
 
 ## 🔗 ROS Integration
@@ -41,7 +41,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 
 > Example: The Raspberry Pi runs ROS to integrate **vision, speech recognition, motion tracking, and chatbot services** into a unified system.
 
-![ROS Integration]()
+![ROS Integration](imades/The roadmap.jpg)
 
 ---
 

@@ -64,7 +64,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Printed using a **3D printer**  
 - Provide the humanoid form of the robot  
 
-![3D Printed Parts](../images/3d-parts.jpg)
+![3D Printed Parts](/images/3d-parts.jpg)(/images/3d-parts1.jpg)(/images/3d-parts2.jpg)
 
 ---
 
