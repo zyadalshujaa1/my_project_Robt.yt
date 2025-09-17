@@ -34,7 +34,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Provide precise and smooth movements  
 
 <p align="center">
-  <img src="../images/servo_motor.jpg" alt="Kinect Sensor" width="500">
+  <img src="../images/servo_motor.jpg" alt="Kinect Sensor" width="300">
 </p>
 
 ---
@@ -49,7 +49,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
   - Skeletal tracking  
 
 <p align="center">
-  <img src="../images/docs/computer-vision2.jpg" alt="Kinect Sensor" width="500">
+  <img src="../images/computer-vision2.jpg" alt="Kinect Sensor" width="500">
 </p>
 ---
 
