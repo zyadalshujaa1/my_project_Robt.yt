@@ -67,8 +67,8 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 
 <p align="center">
   <img src="../images/3d_parts.jpg" alt="3D Printed Part" width="250">
-  <img src="images/3d_parts1.jpg" alt="3D Printed Part 1" width="250">
-  <img src="images/3d_parts2.jpg" alt="3D Printed Part 2" width="250">
+  <img src="../images/3d_parts1.jpg" alt="3D Printed Part 1" width="250">
+  <img src="../images/3d_parts2.jpg" alt="3D Printed Part 2" width="250">
 </p>
 ---
 
