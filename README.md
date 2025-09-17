@@ -54,7 +54,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Emotion Detection** – Deep learning model to detect emotions  
 - **OCR (Optical Character Recognition)** – Read text from images (online & offline)  
 
-![Computer Vision](computer-vision2.jpg)
+!
 
 ---
 
