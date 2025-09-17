@@ -46,9 +46,9 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - Enables modular and scalable development for robotic applications  
 
 > Example: The Raspberry Pi runs ROS to integrate **vision, speech recognition, motion tracking, and chatbot services** into a unified system.
-
+<p align="center">
 <img src="images/imageszeta_robot.jpg" alt="3D Printed Robot" width="300">
- 
+</p>
 
 ---
 
@@ -69,7 +69,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - Recognize and process spoken commands  
 - **Online & Offline recognizers** available  
 
-![Voice Recognition](images/voice.png)
+
 
 ---
 
@@ -77,7 +77,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Depth imaging & skeletal motion tracking**  
 - Save and replay robot movements  
 
-![Motion](images/motion.png)
+
 
 ---
 
