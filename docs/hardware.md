@@ -23,8 +23,9 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Communicates with Raspberry Pi via **SPI protocol**  
 - Converts Raspberry Pi commands into **servo motor movements**  
 
-
+<p align="center">
 <img src="../images/esp32_code.jpg" alt="3D Printed Part 1" width="600">
+  </p>
 ---
 
 ### 3. MG996R Servo Motors
@@ -33,9 +34,9 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Controlled by the ESP32 microcontroller  
 - Provide precise and smooth movements  
 
-
+<p align="center">
   <img src="../images/servo_motor.jpg" alt="Kinect Sensor" width="300">
-
+</p>
 
 ---
 
@@ -58,7 +59,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Enable **voice interaction** and natural conversations  
 - Used for both speech recognition and text-to-speech  
 
-![Speakers and Mic](../images/microphone.jpg)
+
 
 ---
 
