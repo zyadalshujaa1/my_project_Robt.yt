@@ -18,7 +18,7 @@ The goal of this project is to build an affordable and modular humanoid robot th
 - AI + Robotics integration experiments  
 - Personal assistant and service robot applications  
 <p align="center">
-  <img src="images/The_roadmap.jpg" alt="Me and Zeta Robot" width="600">
+  <img src="images/The_roadmap.jpg" alt="Me and Zeta Robot" width="700">
 </p>
 
 ---
