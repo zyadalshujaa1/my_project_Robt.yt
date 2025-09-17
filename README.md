@@ -1,8 +1,8 @@
 # 🤖 Humanoid Robot Project
 
 <!-- Add a hero image of your robot here -->
-![Robot Preview](images/zeta_robot.jpg)
 
+<img src="images/zeta_robot.jpg" alt="Zeta Robot" width="400" height="400">
 ---
 
 ## 📌 Project Overview
@@ -67,7 +67,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - Recognize and process spoken commands  
 - **Online & Offline recognizers** available  
 
-![Voice Recognition](images/voice.png)
+![Voice Recognition]
 
 ---
 
