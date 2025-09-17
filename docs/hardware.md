@@ -13,7 +13,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Runs **ROS (Robot Operating System)**  
 - Acts as the **main controller** for the robot, managing vision, motion, and AI modules.  
 
-![Raspberry Pi](../images/raspberry-pi.jpg)
+
 
 ---
 
@@ -23,7 +23,7 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Communicates with Raspberry Pi via **SPI protocol**  
 - Converts Raspberry Pi commands into **servo motor movements**  
 
-![ESP32](../images/esp32.jpg)
+![ESP32](images/esp32_code.jpg)
 
 ---
 
@@ -46,8 +46,9 @@ This document describes the hardware components used in the **Humanoid Robot Pro
   - Emotion & gender recognition  
   - Skeletal tracking  
 
-![Kinect](../images/kinect.jpg)
-
+<p align="center">
+  <img src="images/computer-vision2.jpg" alt="Kinect Sensor" width="500">
+</p>
 ---
 
 ### 5. Speakers & Microphone
@@ -64,8 +65,11 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Printed using a **3D printer**  
 - Provide the humanoid form of the robot  
 
-![3D Printed Parts](/images/3d-parts.jpg)(/images/3d-parts1.jpg)(/images/3d-parts2.jpg)
-
+<p align="center">
+  <img src="images/3d_parts.jpg" alt="3D Printed Part" width="250">
+  <img src="images/3d_parts1.jpg" alt="3D Printed Part 1" width="250">
+  <img src="images/3d_parts2.jpg" alt="3D Printed Part 2" width="250">
+</p>
 ---
 
 ## ⚙️ Summary
