@@ -33,9 +33,9 @@ This document describes the hardware components used in the **Humanoid Robot Pro
 - Controlled by the ESP32 microcontroller  
 - Provide precise and smooth movements  
 
-<p align="center">
+
   <img src="../images/servo_motor.jpg" alt="Kinect Sensor" width="300">
-</p>
+
 
 ---
 
