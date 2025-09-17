@@ -1,11 +1,7 @@
 # 🤖 Humanoid Robot Project
 
 <!-- Add a hero image of your robot here -->
-
-<p align="center">
-  <img src="images/zeta_robot.jpg" alt="Me and Zeta Robot" width="500">
-</p>
-
+![Robot Preview](images/robot.jpg)
 
 ---
 
@@ -18,6 +14,9 @@ The goal of this project is to build an affordable and modular humanoid robot th
 - Education and robotics learning  
 - AI + Robotics integration experiments  
 - Personal assistant and service robot applications  
+<p align="center">
+  <img src="images/the_roadmap.jpg" alt="Me and Zeta Robot" width="500">
+</p>
 
 ---
 
@@ -33,11 +32,6 @@ The humanoid robot is built using the following hardware:
 
 👉 Full details are available in the [Hardware Documentation](docs/hardware.md).
 
-
-<img src="images/imageszeta_robot.jpg" alt="Zeta Robot" width="300" height="400">
-
-
-
 ---
 
 ## 🔗 ROS Integration
@@ -50,7 +44,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 
 > Example: The Raspberry Pi runs ROS to integrate **vision, speech recognition, motion tracking, and chatbot services** into a unified system.
 
-![ROS Integration](imades/The roadmap.jpg)
+![ROS Integration]
 
 ---
 
@@ -63,7 +57,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Emotion Detection** – Deep learning model to detect emotions  
 - **OCR (Optical Character Recognition)** – Read text from images (online & offline)  
 
-!
+![Computer Vision](images/computer-vision.png)
 
 ---
 
@@ -71,7 +65,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - Recognize and process spoken commands  
 - **Online & Offline recognizers** available  
 
-![Voice Recognition]
+![Voice Recognition](images/voice.png)
 
 ---
 
@@ -79,7 +73,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Depth imaging & skeletal motion tracking**  
 - Save and replay robot movements  
 
-![Motion]
+![Motion](images/motion.png)
 
 ---
 
@@ -87,7 +81,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - **Text-to-Speech (TTS)** engine for natural robot speech  
 - Works both **offline** and **online**  
 
-![Speech]
+!
 
 ---
 
@@ -95,8 +89,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 - Integrated with **ChatGPT API**  
 - Handles questions, casual conversations, and interactive tasks  
 
-![Chatbot]
-
+!
 ---
 
 ## 🚀 Getting Started
