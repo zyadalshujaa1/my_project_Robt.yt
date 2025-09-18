@@ -75,7 +75,7 @@ The project uses **ROS (Robot Operating System)** as the middleware that connect
 ### 🕺 Motion
 - **Depth imaging & skeletal motion tracking**  
 - Save and replay robot movements  
-[![Robot Video](https://youtube.com/shorts/TsWMhktIxIk?si=G37ZorTLSRh8fFS5)
+[![Robot Video]https://youtube.com/shorts/TsWMhktIxIk?si=G37ZorTLSRh8fFS5]
 
 
 
